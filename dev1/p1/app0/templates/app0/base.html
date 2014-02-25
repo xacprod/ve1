@@ -1,0 +1,70 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>  
+    <!--  FONTS  -->
+    <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="    text/css">
+    
+    <!-- Default CSS -->
+    <!-- <link rel="stylesheet" href="{% static 'etudevet/css/foundation.css'%}">
+    <!--[if IE 8]>
+    	<link rel="stylesheet" href="{% static 'etudevet/css/ie8-grid-foundation-4.css'%}" />
+<![endif]-->
+	<!--AJAX -->
+    <!-- <script type="text/javascript" src="{% static "etudevet/js/ajaxsearch.js" %} "></script>
+	-->
+</head>
+
+<body>
+     
+    <!-- *************************** Header *************************** -->
+    
+    <div class = 'header'>
+        {% block header %}
+        
+        {% endblock %}	
+    </div>
+    
+    
+    
+    <!--*************************** Barre de Navigation ***************************-->
+    
+    <div class = 'nav'>
+        {% block nav %}
+        
+        {% endblock %}	
+    </div>
+    
+
+    <!-- ***************************Main Content*************************** -->
+
+    <div class = 'main'>
+        {% block main %}
+        
+        {% endblock %}	
+    </div>
+    
+
+    
+    <!-- *************************** footer ******************************  -->
+
+    <div class = 'last'>
+        {% block last %}
+        
+        {% endblock %}	
+    </div>
+    
+
+
+    <footer>
+        {% block footer %}
+        
+        {% endblock %}	
+    </footer>
+</body>
+</html>

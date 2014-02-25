@@ -1,0 +1,19 @@
+{% extends "app0/base.html" %}
+{% load static %}
+
+
+{% block main %}
+    
+    {% if latest_poll_list %}
+      	
+        <ul>
+        {% for poll in latest_poll_list %}
+        	<li><a href="{% url 'app0:choice' poll.id %}">{{poll.question}}</a></li> 
+        {% endfor %}
+    
+        </ul>
+    {% else %}
+       <p>No polls available.</p>
+    {% endif %}
+
+{% endblock %}
