@@ -1,4 +1,5 @@
-# Django settings for p0 project.
+# Django settings for p7 project.
+# Django settings for p3 project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -6,7 +7,6 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
     ('xacpro','x.carbonel@gmail.com')
-
 )
 
 MANAGERS = ADMINS
@@ -14,7 +14,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db_p0',                      # Or path to database file if using sqlite3.
+        'NAME': 'db_todolist',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'xcpro',
         'PASSWORD': 'xc1980',
@@ -74,12 +74,10 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    
-    #'C:/Users/xcpro/ve0/dev0/p5/etudevet/static', # we don't precise static/plot1 because then we would specify in html js/plot.js in the template=> not specific of an app
-    #'../static/app2/css/',
-    #'../static/app2/js/',
-    #'../static/app2/img/',
-)
+
+    'C:/Users/xcpro/ve0/dev0/p7/todolist/static', # we don't precise static/plot1 because then we would specify in html js/plot.js in the template=> not specific of an app
+    #'C:/Users/xcpro/ve0/dev0/p3/plot2/static', #so we prefer to leave static alone and specify plot1/js/plot.js in the template
+
 )
 
 # List of finder classes that know how to find static files in
@@ -91,7 +89,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '33)72@(cu(xgs6=^s_ub*ahd)1e3kt43(3dev(=j=7x%c9f2z('
+SECRET_KEY = '3+!#6za3teqya)15ij1rhlz_@@av^4$@5028yfyph1th0oxt_8'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -110,18 +108,15 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'p0.urls'
+ROOT_URLCONF = 'p7.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'p0.wsgi.application'
+WSGI_APPLICATION = 'p7.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
+    #'C:/Users/xcpro/ve0/dev0/p1/ajx1/templates/ajx1',
+
     # Don't forget to use absolute paths, not relative paths.
-
-    #'C:/Users/xcpro/ve1/dev1/p1/app1/templates/app1',
-
 )
 
 INSTALLED_APPS = (
@@ -131,13 +126,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'south',
-
-    'p0',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'todolist',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -168,7 +162,6 @@ LOGGING = {
         },
     }
 }
-
 
 # TO SEND A MESSAGE FROM GMAIL
 
