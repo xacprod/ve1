@@ -1,4 +1,4 @@
-# Django settings for p1 project.
+# Django settings for p2 project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -14,7 +14,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db_p1',                      # Or path to database file if using sqlite3.
+        'NAME': 'db_p2',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'xcpro',
         'PASSWORD': 'xc1980',
@@ -109,17 +109,17 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'p1.urls'
+ROOT_URLCONF = 'p2.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'p1.wsgi.application'
+WSGI_APPLICATION = 'p2.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 
-    #'C:/Users/xcpro/ve1/dev1/p1/app1/templates/app1',
+    #'C:/Users/xcpro/ve1/dev1/p2/app2/templates/app2',
 
 )
 
@@ -132,7 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
 
-    'app0',
+    'memory',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

@@ -1,0 +1,66 @@
+{% extends "memory/base.html" %}
+{% load static %}
+
+
+{% block main %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<div class="container">
+
+<h1>{{ item.question }}</h1>
+<h2>{{ item.answer }}</h2>
+
+<div class="row">
+
+	{% for x in priority_scale %}
+	    {% if x == item.priority  %}
+	    	<div class="col-xs-1">
+	    	    <a href=""><button class="btn btn-danger">{{x}}</button></a>
+	    	</div>
+	    {% else %}
+	        <div class="col-xs-1">
+	            <a href=" {% url 'memory:change_priority' mem_id=item.id new_priority=x %}">
+	            	<button class="btn btn-primary">{{x}}</button></a>
+	        </div>
+	    {% endif %}
+	{% endfor %}
+	    	<div class="col-xs-1">
+	    	    <a href="{% url 'memory:suppr' item.id %} "><button class="btn btn-danger">Supprimer</button></a>
+	    	</div>
+</div><br>
+
+    <form action="{% url 'memory:add' %}" method="post" > 
+
+	    {% csrf_token %}
+		
+	    <div class="row">
+		    <div class="col-xs-1">
+		        <input type="text" name="question" value="mot à mémoriser">
+		    </div>
+		</div><br>
+
+	    <div class="row">
+		    <div class="col-xs-1">
+		        <input type="text" name="answer" value="traduction">
+		    </div>
+	    </div><br>
+
+		<div class="row">
+		    <div class="col-xs-4">
+			    <select class="form-control" name="priority" >
+			        <option>1</option>
+			        <option>2</option>
+			        <option>3</option>
+			        <option>4</option>
+			        <option>5</option>
+			        <option>6</option>
+			        <option>7</option>
+			    </select>
+		    </div>
+	    </div><br>
+        <input type="submit" value="Ajouter" class="btn btn-danger" />
+    </form>
+</div>
+
+{% endblock %}

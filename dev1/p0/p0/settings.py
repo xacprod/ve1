@@ -1,4 +1,4 @@
-# Django settings for p1 project.
+# Django settings for p0 project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
