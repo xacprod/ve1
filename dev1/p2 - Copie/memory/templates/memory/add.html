@@ -1,0 +1,17 @@
+{% extends "memory/base.html" %}
+{% load static %}
+
+
+{% block main %}
+
+    <form action="{% url 'memory:add' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="new_question" value="mot à mémoriser">
+    <input type="text" name="new_answer" value="traduction">
+    <input type="radio" id="priority1"><label for="priority1">1</label>
+    <input type="radio" id="priority2"><label for="priority2">2</label>
+    <input type="submit" value="Vote" />
+
+    </form>
+
+{% endblock %}

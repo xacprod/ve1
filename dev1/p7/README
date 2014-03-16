@@ -1,5 +1,0 @@
-SETUP
-
-1) Create the database (db_todolist)
-2) South (see Code_south help)
-- add south and run syncdb BEFORE adding the app

@@ -14,7 +14,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db_p1',                      # Or path to database file if using sqlite3.
+        'NAME': 'db_p0',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'xcpro',
         'PASSWORD': 'xc1980',
@@ -80,6 +80,7 @@ STATICFILES_DIRS = (
     #'../static/app2/js/',
     #'../static/app2/img/',
 )
+)
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -109,10 +110,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'p1.urls'
+ROOT_URLCONF = 'p0.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'p1.wsgi.application'
+WSGI_APPLICATION = 'p0.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -132,7 +133,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
 
-    'app0',
+    'p0',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
