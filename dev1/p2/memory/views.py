@@ -9,13 +9,11 @@ from memory.models import MemoryItem
 
 
 def display(request):
-
+    
+    priority_scale = MemoryItem.PRIORITY_CHOICE
+    # Mixed list
     mem_list = list(MemoryItem.objects.all().order_by('?'))
-    #mem_list = random.shuffle(mem_list)
     item = mem_list[0]
-    priority_scale = ['Maitrisé','Connu','A revoir','Important','Prioritaire']
-
-
 
     return render(request, 'memory/display.html',{
         'item':item,
@@ -25,7 +23,7 @@ def display(request):
 def change_priority(request, mem_id, new_priority):  
 
     item_with_new_priority = get_object_or_404(MemoryItem, pk=mem_id)
-    item_with_new_priority.priority = new_priority
+    item_with_new_priority.priority = new_priority.encode("utf-8")
     item_with_new_priority.save()
     return HttpResponseRedirect(reverse('memory:display'))
 
@@ -39,9 +37,10 @@ def add(request):
 
     item = MemoryItem()
     if request.method=='POST':
-        item.question = request.POST['question']
-        item.answer = request.POST['answer']
-        item.priority = request.POST['priority']
+        item.question = request.POST['question'].encode("utf-8")
+        item.answer = request.POST['answer'].encode("utf-8")
+        priority = request.POST['priority'].encode("utf-8")
+
         item.save()
         return HttpResponseRedirect(reverse('memory:display'))
     return HttpResponse('erreur')

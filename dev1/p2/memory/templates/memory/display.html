@@ -1,3 +1,4 @@
+
 {% extends "memory/base.html" %}
 {% load static %}
 
@@ -10,39 +11,45 @@
 
 <h1>{{ item.question }}</h1>
 <h2>{{ item.answer }}</h2>
-
+<h2>{{ item.get_priority_display }}</h2>
 
 <div class="row">
 
-	{% for x in priority_scale %}
+	<!-- x,y tuple is like MAITRISE, u"maitrisé" avec MAITRISE = MAI -->
+	{% for x,y in priority_scale %}
+		<!-- if the priority status of the item match the current loop in priority scale list => button should be red -->
 	    {% if x == item.priority  %}
-	    	<div class="col-xs-1">
-	    	    <a href=""><button class="btn btn-danger">{{x}}</button></a>
+	    	<div class="col-xs-2">
+	    	    <a href=""><button class="btn btn-danger">{{y}}</button></a>
 	    	</div>
 	    {% else %}
-	        <div class="col-xs-1">
-	            <a href=" {% url 'memory:change_priority' mem_id=item.id new_priority=x %}">
-	            	<button class="btn btn-primary">{{x}}</button></a>
+	        <div class="col-xs-2">
+	             <a href=" {% url 'memory:change_priority' mem_id=item.id new_priority=x %}">
+	            	<button class="btn btn-primary">{{y}}</button></a>
 	        </div>
 	    {% endif %}
 	{% endfor %}
-	    	<div class="col-xs-1">
-	    	    <a href="{% url 'memory:suppr' item.id %} "><button class="btn btn-danger">Supprimer</button></a>
-	    	</div>
+</div><br>
+<div class="row">
+
+	<div class="col-xs-8">
+	    <a href="{% url 'memory:suppr' item.id %} "><button class="btn btn-danger">Supprimer</button></a>
+    </div>
 </div><br>
 
+<div class="row">
     <form action="{% url 'memory:add' %}" method="post" > 
 
 	    {% csrf_token %}
 		
 	    <div class="row">
-		    <div class="col-xs-1">
+		    <div class="col-xs-2">
 		        <input type="text" name="question" value="mot à mémoriser">
 		    </div>
 		</div><br>
 
 	    <div class="row">
-		    <div class="col-xs-1">
+		    <div class="col-xs-2">
 		        <input type="text" name="answer" value="traduction">
 		    </div>
 	    </div><br>
@@ -50,13 +57,9 @@
 		<div class="row">
 		    <div class="col-xs-4">
 			    <select class="form-control" name="priority" >
-			        <option>1</option>
-			        <option>2</option>
-			        <option>3</option>
-			        <option>4</option>
-			        <option>5</option>
-			        <option>6</option>
-			        <option>7</option>
+			        {% for x,y in priority_scale %}
+			            <option>{{y}}</option>
+				    {% endfor %}
 			    </select>
 		    </div>
 	    </div><br>

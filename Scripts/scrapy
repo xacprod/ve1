@@ -1,0 +1,4 @@
+#!C:\Users\xcpro\ve1\Scripts\python.exe
+
+from scrapy.cmdline import execute
+execute()
