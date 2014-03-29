@@ -1,0 +1,12 @@
+HOW TO UPLOAD
+
+
+
+
+1) Go to the MEDIA_ROOT
+
+add the path to the media repertory
+'C:\Users\xcpro\ve1\dev1\p4\drag_drop\media\drag_drop\'
+
+
+2) 

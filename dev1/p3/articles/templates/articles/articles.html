@@ -1,0 +1,29 @@
+{% extends "articles/base.html" %}
+
+{% block main %}
+	
+
+<h2>Language is {{language}} </h2>
+<h2>Session_ Language is {{session_language}} </h2>
+<h5><a href="{% url 'articles:language' language='en-GB' %}"> Change to English</a></h5>
+<h5><a href="{% url 'articles:language' language='fr-FR'%}"> Change to French</a></h5>
+<h5><a href="{% url 'articles:language' language='es-ES'%}"> Change to Spanish</a></h5>
+
+
+{% if articles.count > 0 %}
+
+
+{% for article in articles %}
+<div>
+<h2><a href="{% url 'articles:article' article.id %} ">{{article.title}} </a></h2>
+
+<p>{{article.body|truncatewords:"10"}} </p>
+</div>		
+{% endfor %}	
+
+{% else %}
+<p>Nothing to show!</p>
+
+{% endif %}
+
+{% endblock main %}

@@ -1,0 +1,15 @@
+
+{% extends "articles/base.html" %}
+{% load static %}
+
+
+{% block main %}
+
+<h2>Language set up is {{language}} </h2>
+
+<div>
+<h2><a href="{% url 'articles:article' article.id %} ">{{article.title}} </a></h2>
+<p>{{article.body}} </p>
+</div>
+
+{% endblock main %}

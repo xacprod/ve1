@@ -1,0 +1,74 @@
+P0 SET UP
+
+
+1) Start a new project
+
+2) Add the app
+
+3) Adapt/mix the setting up
+- Time zone langage
+- Database
+- Installed App
+- Logging/mail if needed
+
+4) Add the UTF 8 everywhere
+
+# -*- coding:utf-8 -*-
+
+4bis) Add Media/static directories if needed
+
+5) Syncdb + del Migrations
+
+5) Bis add your models to the admin 
+
+6) Comment Index in urls.py
+
+7) Launch admin!
+
+
+
+
+
+
+
+
+METHOD DUPLICATION (DEPRECATED)
+
+#################################
+1) Change p0 by projectname
+
+global
+- manage.py
+
+project
+- 
+
+app
+- wsgi
+-  
+
+#################################
+2) Change app0 by appname
+
+project
+- url
+- setting
+
+app
+- app directory name
+- url
+- views (if model import)
+
+
+##################################
+3) Set the settings
+
+- app0/p0
+- create the database
+
+
+##################################
+4) Do the cleaning up
+
+- clean the migration file and any pics
+- comment the urls that does not serve (index)
