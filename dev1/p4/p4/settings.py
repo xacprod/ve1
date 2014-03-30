@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'd6k5$w^mhd^jx=uu$_#=d*4=ah1#+xu!xnir+$^6$vanyx*ym='
+SECRET_KEY = '&e#j8ffaujls^)l+c90rpzve^i&x-5)v8u&u$n-!^gj-zz-u55'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -57,13 +57,8 @@ WSGI_APPLICATION = 'p4.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db_p3',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': 'xcpro',
-        'PASSWORD': 'xc1980',
-        'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
